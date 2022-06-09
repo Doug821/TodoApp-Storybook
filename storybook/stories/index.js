@@ -1,10 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
-import ButtonStory from './Button/Button';
-import InputStory from './Input/Input';
-import CardStory from './Card/Card';
+import ButtonStory from './components/Button/Button';
+import InputStory from './components/Input/Input';
+import CardStory from './components/Card/Card';
 import {palette} from '../../src/common.styles';
+import HomeSceneStory from './scenes/home';
+import SecondSceneStory from './scenes/second';
 
 storiesOf('Button', module)
   .addDecorator(story => (
@@ -43,4 +45,16 @@ storiesOf('Card', module)
   ))
   .add('Primary', () => {
     return <CardStory step="Primary" />;
+  });
+
+storiesOf('Home', module)
+  .addDecorator(story => <View>{story()}</View>)
+  .add('Primary', () => {
+    return <HomeSceneStory step="Primary" />;
+  });
+
+storiesOf('Second', module)
+  .addDecorator(story => <View>{story()}</View>)
+  .add('Primary', () => {
+    return <SecondSceneStory step="Primary" />;
   });

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import GlobalFont from 'react-native-global-font';
-import Button from '../../../src/components/Button/Button';
-import {palette, type} from '../../../src/common.styles';
+import Button from '../../../../src/components/Button/Button';
+import {palette, type} from '../../../../src/common.styles';
 
 export default ButtonStory = ({step}) => {
   useEffect(() => {

@@ -11,6 +11,7 @@ export const cardTitle = {
 
 export const cardView = {
   width: '100%',
+  marginTop: spacing.one,
   backgroundColor: palette.gray1,
   borderRadius: 12,
   flexDirection: 'row',

@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import GlobalFont from 'react-native-global-font';
-import Card from '../../../src/components/Card/Card';
+import Home from '../../../src/Scenes/home/home';
 
-export default CardStory = ({step}) => {
+export default HomeSceneStory = ({step}) => {
   useEffect(() => {
     GlobalFont.applyGlobal('ApercuPro-Regular');
   }, []);
 
   switch (step) {
     case 'Primary':
-      return <Card title="Task 1" />;
+      return <Home title="Wellcome to the Home Screen" />;
   }
 };
