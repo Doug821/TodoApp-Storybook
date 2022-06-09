@@ -14,6 +14,7 @@ import {
 
 export default Home = ({title, navigate, tasks}) => {
   const onPress = () => console.log('clicked');
+  const onPressDb = t => console.log(t[0]);
 
   return (
     <View style={contentWrapper}>
@@ -23,7 +24,7 @@ export default Home = ({title, navigate, tasks}) => {
           title="➡️"
           variant="check"
           disabled={false}
-          onPress={navigate}
+          onPress={onPressDb(tasks)}
           loading={false}
         />
       </View>
