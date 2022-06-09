@@ -14,7 +14,7 @@ import {
 
 export default Home = ({title, navigate, tasks}) => {
   const onPress = () => console.log('clicked');
-  const onPressDb = t => t.map(task => console.log(task));
+  const onPressDb = t => console.log(typeof t);
 
   return (
     <View style={contentWrapper}>
