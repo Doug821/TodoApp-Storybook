@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import GlobalFont from 'react-native-global-font';
-import Second from '../../../src/Scenes/second/second';
+import Blank from '../../../src/Scenes/second/second';
 
 export default SecondSceneStory = ({step}) => {
   useEffect(() => {
@@ -9,6 +9,6 @@ export default SecondSceneStory = ({step}) => {
 
   switch (step) {
     case 'Primary':
-      return <Second title="Wellcome to the Second Screen" />;
+      return <Blank title="Wellcome to the Second Screen" />;
   }
 };

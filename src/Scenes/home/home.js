@@ -12,7 +12,7 @@ import {
   cardsContainer,
 } from './styles';
 
-export default Home = ({title, navigate}) => {
+export default Home = ({title, navigate, tasks}) => {
   const onPress = () => console.log('clicked');
 
   return (
@@ -38,11 +38,10 @@ export default Home = ({title, navigate}) => {
         />
       </View>
       <View style={cardsContainer}>
-        <Card title="Task 1" />
-        <Card title="Task 2" />
-        <Card title="Task 3" />
-        <Card title="Task 4" />
-        <Card title="Task 5" />
+        {tasks &&
+          tasks.map((task, index) => {
+            <Card key={index} title={task} />;
+          })}
       </View>
     </View>
   );

@@ -12,7 +12,7 @@ import {
   cardsContainer,
 } from './styles';
 
-export default Second = ({title, navigate}) => {
+export default Blank = ({title, navigate}) => {
   const onPress = () => console.log('clicked');
 
   return (
