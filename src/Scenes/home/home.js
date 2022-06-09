@@ -12,9 +12,8 @@ import {
   cardsContainer,
 } from './styles';
 
-export default Home = ({title, navigate, tasks}) => {
+export default Home = ({title, navigate, children}) => {
   const onPress = () => console.log('clicked');
-  const onPressDb = t => console.log(typeof t);
 
   return (
     <View style={contentWrapper}>
@@ -24,7 +23,7 @@ export default Home = ({title, navigate, tasks}) => {
           title="➡️"
           variant="check"
           disabled={false}
-          onPress={onPressDb(tasks)}
+          onPress={navigate}
           loading={false}
         />
       </View>
@@ -38,12 +37,7 @@ export default Home = ({title, navigate, tasks}) => {
           loading={false}
         />
       </View>
-      <View style={cardsContainer}>
-        {tasks &&
-          tasks.map((task, index) => {
-            <Card key={index} title={task} />;
-          })}
-      </View>
+      <View style={cardsContainer}>{children}</View>
     </View>
   );
 };
