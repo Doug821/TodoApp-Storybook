@@ -12,7 +12,7 @@ import {
   cardsContainer,
 } from './styles';
 
-export default Home = ({title}) => {
+export default Home = ({title, navigate}) => {
   const onPress = () => console.log('clicked');
 
   return (
@@ -21,9 +21,9 @@ export default Home = ({title}) => {
         <Text style={cardTitle}>{title}</Text>
         <Button
           title="➡️"
-          variant="delete"
+          variant="check"
           disabled={false}
-          onPress={onPress}
+          onPress={navigate}
           loading={false}
         />
       </View>

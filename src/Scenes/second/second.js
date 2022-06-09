@@ -12,7 +12,7 @@ import {
   cardsContainer,
 } from './styles';
 
-export default Second = ({title}) => {
+export default Second = ({title, navigate}) => {
   const onPress = () => console.log('clicked');
 
   return (
@@ -22,7 +22,7 @@ export default Second = ({title}) => {
           title="⬅️"
           variant="check"
           disabled={false}
-          onPress={onPress}
+          onPress={navigate}
           loading={false}
         />
         <Text style={cardTitle}>{title}</Text>
