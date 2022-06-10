@@ -41,9 +41,9 @@ export default Home = ({title, navigate, tasks}) => {
           loading={false}
         />
       </View>
-      <View style={cardsContainer}>
+      {/* <View style={cardsContainer}>
         {tasks && tasks.map(task => <Card title={task} />)}
-      </View>
+      </View> */}
     </View>
   );
 };
