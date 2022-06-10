@@ -22,7 +22,7 @@ export default Home = ({title, navigate, tasks}) => {
   return (
     <View style={contentWrapper}>
       <View style={cardView}>
-        <Text style={cardTitle}>{title}</Text>
+        <Text style={cardTitle}>{navigate}</Text>
         <Button
           title="➡️"
           variant="check"
@@ -41,9 +41,9 @@ export default Home = ({title, navigate, tasks}) => {
           loading={false}
         />
       </View>
-      {/* <View style={cardsContainer}>
-        {tasks && tasks.map(task => <Card title={task} />)}
-      </View> */}
+      <View style={cardsContainer}>
+        {tasks && tasks.map((task, index) => <Card key={index} title={task} />)}
+      </View>
     </View>
   );
 };
