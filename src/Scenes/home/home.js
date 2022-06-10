@@ -15,19 +15,15 @@ import {
 export default Home = ({title, navigate, tasks}) => {
   const onPress = () => console.log('clicked');
 
-  const onShow = () => {
-    console.info(tasks);
-  };
-
   return (
     <View style={contentWrapper}>
       <View style={cardView}>
-        <Text style={cardTitle}>{navigate}</Text>
+        <Text style={cardTitle}>{title}</Text>
         <Button
           title="➡️"
           variant="check"
           disabled={false}
-          onPress={onShow}
+          onPress={navigate}
           loading={false}
         />
       </View>
