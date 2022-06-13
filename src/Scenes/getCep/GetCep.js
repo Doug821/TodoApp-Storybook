@@ -48,6 +48,8 @@ export default GetCep = ({title, navigate, inputValue, setInputValue}) => {
       </View>
       <View style={inputContainer}>
         <TextInput
+          keyboardType="numeric"
+          maxLength={8}
           style={textInput}
           onChangeText={setInputValue}
           value={inputValue}
@@ -58,10 +60,10 @@ export default GetCep = ({title, navigate, inputValue, setInputValue}) => {
         <View style={cardsContainer}>
           <View style={cardView}>
             <Text style={cardTitle}>{`
-          ${address.cep}\n
-          ${address.bairro}\n
-          ${address.logradouro}\n
-          ${address.localidade} - ${address.uf}
+              ${address.cep}\n
+              ${address.bairro}\n
+              ${address.logradouro}\n
+              ${address.localidade} - ${address.uf}
         `}</Text>
           </View>
         </View>
