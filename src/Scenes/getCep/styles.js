@@ -43,3 +43,13 @@ export const contentWrapper = {
   padding: 10,
   backgroundColor: palette.gray11,
 };
+
+export const textInput = {
+  width: '100%',
+  backgroundColor: palette.gray1,
+  padding: spacing.one,
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: 12,
+  alignSelf: 'center',
+};

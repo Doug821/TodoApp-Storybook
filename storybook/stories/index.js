@@ -6,7 +6,7 @@ import InputStory from './components/Input/Input';
 import CardStory from './components/Card/Card';
 import {palette} from '../../src/common.styles';
 import HomeSceneStory from './scenes/home';
-import SecondSceneStory from './scenes/second';
+import GetCepStory from './scenes/getCep';
 
 storiesOf('Button', module)
   .addDecorator(story => (
@@ -53,8 +53,8 @@ storiesOf('Home', module)
     return <HomeSceneStory step="Primary" />;
   });
 
-storiesOf('Second', module)
+storiesOf('GetCep', module)
   .addDecorator(story => <View>{story()}</View>)
   .add('Primary', () => {
-    return <SecondSceneStory step="Primary" />;
+    return <GetCepStory step="Primary" />;
   });
