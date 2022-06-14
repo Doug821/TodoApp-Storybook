@@ -13,9 +13,10 @@ import {
   textInput,
 } from './styles';
 
-export default GetCep = ({title, navigate, address}) => {
+export default GetCep = ({title, navigate, getAddress, address}) => {
   const [cardAdress, setCardAddress] = useState();
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState('');
+  const isValidPostalCode = postCode => /^[0-9]{8}$/.test(postCode);
   const debouncedInputValue = useDebounce(inputValue, 500);
 
   useEffect(() => {
@@ -23,7 +24,10 @@ export default GetCep = ({title, navigate, address}) => {
   }, [address]);
 
   useEffect(() => {
-    console.log(debouncedInputValue);
+    setCardAddress(null);
+    isValidPostalCode(debouncedInputValue)
+      ? getAddress(debouncedInputValue)
+      : console.log('Invalid post-code');
   }, [debouncedInputValue]);
 
   return (
@@ -52,10 +56,10 @@ export default GetCep = ({title, navigate, address}) => {
         <View style={cardsContainer}>
           <View style={cardView}>
             <Text style={cardTitle}>{`
-              ${cardAdress.code}\n
-              ${cardAdress.address}\n
-              ${cardAdress.district}\n
-              ${cardAdress.city} - ${cardAdress.state}
+              ${cardAdress?.code}\n
+              ${cardAdress?.address}\n
+              ${cardAdress?.district}\n
+              ${cardAdress?.city} - ${cardAdress?.state}
         `}</Text>
           </View>
         </View>
