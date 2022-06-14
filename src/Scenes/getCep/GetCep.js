@@ -13,26 +13,12 @@ import {
   textInput,
 } from './styles';
 
-export default GetCep = ({title, navigate, inputValue, setInputValue}) => {
-  const onPress = () => console.log('clicked');
-  const [address, setAddress] = useState();
-
-  const debouncedSearchTerm = useDebounce(inputValue, 500);
+export default GetCep = ({title, navigate, inputValue, setInputValue, address}) => {
+  const [cardAdress, setCardAddress] = useState();
 
   useEffect(() => {
-    if (debouncedSearchTerm) {
-      fetch(`https://viacep.com.br/ws/${debouncedSearchTerm}/json`, {
-        method: 'GET',
-      })
-        .then(response => response.json())
-        .then(response => {
-          setAddress(response);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
-  }, [debouncedSearchTerm]);
+    setCardAddress(address);
+  }, [address])
 
   return (
     <View style={contentWrapper}>
@@ -56,14 +42,14 @@ export default GetCep = ({title, navigate, inputValue, setInputValue}) => {
           placeholder="Type your CEP"
         />
       </View>
-      {address && !address.erro && (
+      {cardAdress && !cardAdress.erro && (
         <View style={cardsContainer}>
           <View style={cardView}>
             <Text style={cardTitle}>{`
-              ${address.cep}\n
-              ${address.bairro}\n
-              ${address.logradouro}\n
-              ${address.localidade} - ${address.uf}
+              ${cardAdress.code}\n
+              ${cardAdress.address}\n
+              ${cardAdress.district}\n
+              ${cardAdress.city} - ${cardAdress.state}
         `}</Text>
           </View>
         </View>
