@@ -13,12 +13,18 @@ import {
   textInput,
 } from './styles';
 
-export default GetCep = ({title, navigate, inputValue, setInputValue, address}) => {
+export default GetCep = ({title, navigate, address}) => {
   const [cardAdress, setCardAddress] = useState();
+  const [inputValue, setInputValue] = useState();
+  const debouncedInputValue = useDebounce(inputValue, 500);
 
   useEffect(() => {
     setCardAddress(address);
-  }, [address])
+  }, [address]);
+
+  useEffect(() => {
+    console.log(debouncedInputValue);
+  }, [debouncedInputValue]);
 
   return (
     <View style={contentWrapper}>
